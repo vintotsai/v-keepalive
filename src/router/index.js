@@ -7,7 +7,7 @@ import cc from '@/components/c'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [{
       path: '/',
       redirect: '/a'
@@ -26,3 +26,9 @@ export default new Router({
     },
   ]
 })
+
+router.beforeRouteEnter((to, from, next) => {
+  // 压栈方案 适合没tab得场景
+})
+
+export default router
