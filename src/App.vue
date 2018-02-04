@@ -3,7 +3,7 @@
     <keep-alive :include="includes">
       <router-view/>
     </keep-alive>
-    <button @click="$router.push({path: '/a'})">to a</button>
+    <button @click.stop="$router.push({path: '/a'})">to a</button>
   </div>
 </template>
 
