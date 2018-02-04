@@ -3,6 +3,7 @@
     <keep-alive :include="includes">
       <router-view/>
     </keep-alive>
+    <button @click="$router.push({path: '/a'})">to a</button>
   </div>
 </template>
 
@@ -11,7 +12,7 @@ export default {
   name: 'App',
   computed: {
     includes() {
-      return ['aa', 'cc']
+      return ['aa', 'bb']
     }
   }
 }

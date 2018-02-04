@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>this is aa</h2>
-    <div @click="$router.push({path: '/b'})">to b</div>
+    <button @click="$router.push({path: '/b'})">to b</button>
   </div>
 </template>
 <script>
