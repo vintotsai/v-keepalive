@@ -1,10 +1,13 @@
-# vin-keepalive
+## vin-keepalive -- A Vue.js project
 
 > 方案一：压栈方式
 
-> 方案二(推荐)：使用 keepalive 组件的 max 属性，辅以 router-view 的 key 值动态绑定
+业务场景不复杂可尝试。
+
+> 方案二(推荐)：使用 keepalive 组件的 max 属性(vue 版本达到 v2.5.x)，辅以 router-view 的 key 值动态绑定
 
 router.js
+
 ```javascript
     {
       path: '/home',
@@ -35,8 +38,6 @@ computed: {
     }
 }
 ```
-
-> A Vue.js project
 
 ## Build Setup
 
