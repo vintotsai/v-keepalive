@@ -4,6 +4,19 @@
 
 > 方案二(推荐)：使用 keepalive 组件的 max 属性，辅以 router-view 的 key 值动态绑定
 
+router.js
+```javascript
+    {
+      path: '/home',
+      component: Home,
+      name: 'home',
+      meta: {
+        keepAlive: true, // 需要被keepalive的组件/页面
+        title: '首页'
+      }
+    }
+```
+
 app.vue
 
 ```html
