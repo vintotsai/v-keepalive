@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <keep-alive :include="includes">
-      <router-view/>
+    <keep-alive :max="3">
+      <router-view v-if="$route.meta.keepAlive" />
     </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive" />
     <button @click.stop="$router.push({path: '/a'})">to a</button>
   </div>
 </template>
@@ -11,9 +12,10 @@
 export default {
   name: 'App',
   computed: {
-    includes() {
-      return ['aa', 'bb']
-    }
+    // includes() {
+    //   return ['aa', 'bb']
+    // }
+
   }
 }
 </script>
