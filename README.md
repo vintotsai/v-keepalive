@@ -1,10 +1,33 @@
 # vin-keepalive
 
+> 方案一：压栈方式
+
+> 方案二(推荐)：使用 keepalive 组件的 max 属性，辅以 router-view 的 key 值动态绑定
+
+app.vue
+
+```html
+<keep-alive :max="5">
+  <router-view v-if="$route.meta.keepAlive" :key="key"></router-view>
+</keep-alive>
+<router-view v-if="!$route.meta.keepAlive" :key="key"></router-view>
+```
+
+```javascript
+// 区分相同组件的关键
+computed: {
+
+    key() {
+      return this.$route.fullPath
+    }
+}
+```
+
 > A Vue.js project
 
 ## Build Setup
 
-``` bash
+```bash
 # install dependencies
 npm install
 
